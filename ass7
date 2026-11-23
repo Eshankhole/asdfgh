@@ -1,0 +1,45 @@
+#include<stdio.h>
+struct robot
+{
+	int id;
+	char robot_type[100];
+	int payload_capacity;
+	int actual_load;
+	float time;
+};
+int main()
+{
+	int n,i;
+	struct robot r[10];
+	printf("enter the number of robots");
+	scanf("%d",&n);
+	for(i=1;i<n;i++)
+	{
+		printf("enter details of the robot=%d",i+1);
+		printf("robot id=");
+		scanf("%d",&r[i].id);
+		printf("robot type");
+		scanf("%s",&r[i].robot_type);
+		printf("payload capacity (kg)");
+		scanf("%d",&r[i].payload_capacity);
+		printf("actural load{kg}");
+		scanf("%d",&r[i].actual_load);
+		printf("time required");
+		scanf("%f",&r[i].time);
+		for(i=0;i<n;i++)
+		{
+			float util=(r[i].actual_load/r[i].payload_capacity)*100;
+			if (r[i].actual_load>r[i].payload_capacity)
+			{
+				printf("overload");
+			}
+			else
+			{
+				printf("weight ok");
+			}
+		}
+		
+		
+	}
+	
+}
